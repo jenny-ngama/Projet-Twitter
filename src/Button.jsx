@@ -1,9 +1,6 @@
 import React from 'react'
 
-export default function Button() {
-  return (
-    <div>
-      <button className='bg-sky-400 rounded-full flex ml-20'>tweet</button>
-    </div>
-  )
+export default function Button({ titre, classes }) {
+  return <button className={`bg-sky-400 rounded-full px-4 py-2 flex ml-20 ${classes}`}>{titre}</button>
+
 }

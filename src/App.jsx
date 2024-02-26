@@ -1,11 +1,12 @@
 
 import './App.css'
 import ImgIcon1 from './ImgIcon1';
-import Mall from './Mall';
+// import Mall from './Mall';
 import Images from './assets/Images';
 import Button from './Button';
-import Likes from './Likes';
+// import Likes from './Likes';
 import NewTweet from './NewTweet';
+import Sidebar from './Sidebar';
 function App() {
 
   const Myarray = [
@@ -243,32 +244,18 @@ function App() {
   ]
 
   return (
-    <div className=' w-screen flex h-screen text-white'>
-      <div className='w-1/3 text-x2'>
-        <div className='w-1/2 ml-24'>
-          <ImgIcon1 src="src/assets/Twitter.svg" />
-          <div className=''>
-            <ImgIcon1 name="Home" src="src/assets/Home-Fill.svg" />
-            <ImgIcon1 name="Explore" src="src/assets/Explore.svg" />
-            <ImgIcon1 name="Notifications" src="src/assets/Notifications.svg" />
-            <ImgIcon1 name="Messages" src="src/assets/Messages.svg" />
-            <ImgIcon1 name="Bookmarks" src="src/assets/Bookmarks.svg" />
-            <ImgIcon1 name="Lists" src="src/assets/Lists.svg" />
-            <ImgIcon1 name="Profil" src="src/assets/Profile.svg" />
-            <ImgIcon1 name="More" src="src/assets/More.svg" />
-            <button className='bg-sky-600 ml-40 mt-5  rounded-full'>Tweet</button>
-          </div>
-        </div>
-      </div>
+     <div className='w-screen flex h-full  text-white max-auto xl:pl-30 max-w-10xl'>
+      <Sidebar /> 
       <div className='w-1/3 border-indigo-600...'>
         <div className='flex justify-between header border-y border-x'>
           <h2>HOME</h2>
           <img src="src/assets/Timeline-Prop.svg" alt="media" />
         </div>
-        <div className='Tweet-editor flex border-x border-b'>
+
+        <div className='border-x border-b h-44 flex gap-4 p-2'>
           <Images src="src/assets/Profile.svg" />
-          <div className='Tweet-editor-form'>
-            <textarea className='bg-black' placeholder="Wats's happeninge?" cols="55" rows="1"></textarea>
+          <div className='flex flex-col justify-between'>
+            <input className='bg-transparent border-none w-full p-2 outline-none text-2xl' placeholder="Wats's happeninge?" />
             <div className='flex justify-between'>
               <div className='flex'>
                 <Images src="src/assets/Gif.svg" alt="" />
@@ -276,17 +263,15 @@ function App() {
                 <Images c="src/assets/Emoji.svg" alt="" />
                 <Images src="src/assets/Schedule.svg" alt="" />
               </div>
-              <button className='bg-sky-600  rounded-full'>Tweet</button>
+              {/* <button className='bg-sky-600  rounded-'>Tweet</button> */}
+              <Button titre='Tweet' />
             </div>
-
-
           </div>
         </div>
         {
           Myarray.map((tab) => <NewTweet MyTweet={tab} />)
         }
         <div>
-
         </div>
       </div>
     </div>
